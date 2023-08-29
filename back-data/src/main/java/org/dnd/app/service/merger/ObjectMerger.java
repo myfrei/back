@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-@Mapper(componentModel = "string")
+@Mapper(componentModel = "spring")
 public interface ObjectMerger {
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Individual updateEntityFromRequest(Individual individual, @MappingTarget Individual individualFromDb);

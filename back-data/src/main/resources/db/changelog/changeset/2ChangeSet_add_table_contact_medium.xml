@@ -1,24 +1,23 @@
-<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-                    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-                    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
-                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
-                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-                    http://www.liquibase.org/xml/ns/pro
-                    http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.0.xsd
-                    http://www.liquibase.org/xml/ns/dbchangelog
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
     <changeSet id="2_data" author="Ilia">
         <createTable tableName="individual_contact" remarks="Таблица пользователей">
 
-            <column name="uuid" type="uuid" defaultValueComputed="gen_random_uuid()" remarks="UUID">
+            <column name="uuid" type="uuid" defaultValueComputed="gen_random_uuid()" remarks="UUID контакта">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="contact_medium" type="varchar(36)" remarks="UUID контакта">
-                <constraints nullable="false" />
+            <column name="individual_uuid" type="varchar(36)" remarks="UUID пользователя">
+                <constraints nullable="false"
+                             foreignKeyName="fk_individual_contact_individual"
+                             references="individual(uuid)"/>
+            </column>
+            <column name="contact_type" type="varchar(36)" remarks="Тип контакта">
+                <constraints nullable="false"/>
             </column>
             <column name="value" type="varchar(128)" remarks="Значение контактной информации">
-                <constraints nullable="false" foreignKeyName="fk_individual_contact_individual"/>
+                <constraints nullable="false"/>
             </column>
         </createTable>
         <rollback>

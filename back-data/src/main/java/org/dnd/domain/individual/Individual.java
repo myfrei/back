@@ -1,11 +1,11 @@
 package org.dnd.domain.individual;
 
-import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.dnd.domain.individual.enums.ContactType;
 
-import java.util.List;
+import javax.persistence.*;
+import java.util.Map;
 
 @Entity
 @Table(name = "individual")
@@ -26,12 +26,10 @@ public class Individual {
 
     private Integer age;
 
-    @Enumerated(EnumType.STRING)
-    private ContactType contactType;
-
     @ElementCollection
-    @CollectionTable(name = "individual_contact", joinColumns = @JoinColumn(name = "value"))
-    @Column(name = "contact_medium")
-    private List<String> contactMedium;
-
+    @CollectionTable(name = "individual_contact", joinColumns = @JoinColumn(name = "individual_uuid"))
+    @MapKeyEnumerated(EnumType.STRING)
+    @MapKeyColumn(name = "contact_type")
+    @Column(name = "value")
+    private Map<ContactType, String> contactMedium;
 }
