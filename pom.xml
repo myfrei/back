@@ -33,6 +33,7 @@
         <swagger-annotations.version>2.2.8</swagger-annotations.version>
         <springdoc-openapi-ui.version>1.6.15</springdoc-openapi-ui.version>
         <streamex.version>0.8.1</streamex.version>
+        <kafka.version>2.8.4</kafka.version>
     </properties>
 
     <dependencies>
@@ -46,6 +47,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${kafka.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

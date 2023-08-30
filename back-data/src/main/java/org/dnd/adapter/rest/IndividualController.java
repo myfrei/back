@@ -6,7 +6,6 @@ import org.dnd.adapter.rest.model.IndividualDto;
 import org.dnd.app.exeption.IndividualNotFoundException;
 import org.dnd.app.service.GetIndividualInbound;
 import org.dnd.app.service.PostIndividualInbound;
-import org.dnd.domain.individual.Individual;
 import org.springdoc.api.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,11 +24,6 @@ public class IndividualController {
     public ResponseEntity<IndividualDto> getIndividual(@RequestParam String icp) {
         return new ResponseEntity<>(
                 individualMapper.toDto(getIndividualInbound.handleRequest(icp)), HttpStatus.OK);
-    }
-
-    @PutMapping
-    public ResponseEntity<Individual> getIndividualv1(@RequestParam String icp) {
-        return new ResponseEntity<>(getIndividualInbound.handleRequest(icp), HttpStatus.OK);
     }
 
     @PostMapping
