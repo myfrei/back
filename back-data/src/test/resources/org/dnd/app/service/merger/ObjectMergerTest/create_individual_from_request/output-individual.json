@@ -1,0 +1,11 @@
+{
+  "uuid": "56b41943-e4b9-4f6f-bccd-351fe962ad9c",
+  "icp": "822",
+  "name": "Строитель",
+  "surname": "Домово",
+  "patronymic": "Иванович",
+  "age": 22,
+  "contactMedium": {
+    "PHONE": "+7-999-888-77-55"
+  }
+}

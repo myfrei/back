@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum ErrorMessage {
+public enum ErrorMessages {
     NOT_FOUND("Individual with icp = %s doesn't exist");
     private final String value;
 }

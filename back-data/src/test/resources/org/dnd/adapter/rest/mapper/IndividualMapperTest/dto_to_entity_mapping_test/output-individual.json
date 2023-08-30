@@ -1,0 +1,11 @@
+{
+  "uuid": null,
+  "icp": "911",
+  "name": "Спасатель",
+  "surname": "Малибу",
+  "patronymic": "Сергеевич",
+  "age": 19,
+  "contactMedium": {
+    "PHONE": "+7-999-888-77-66"
+  }
+}

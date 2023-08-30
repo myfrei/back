@@ -1,6 +1,5 @@
 package org.dnd.adapter.rest;
 
-
 import lombok.RequiredArgsConstructor;
 import org.dnd.adapter.rest.mapper.IndividualMapper;
 import org.dnd.adapter.rest.model.IndividualDto;
@@ -8,6 +7,7 @@ import org.dnd.app.exeption.IndividualNotFoundException;
 import org.dnd.app.service.GetIndividualInbound;
 import org.dnd.app.service.PostIndividualInbound;
 import org.dnd.domain.individual.Individual;
+import org.springdoc.api.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +27,7 @@ public class IndividualController {
                 individualMapper.toDto(getIndividualInbound.handleRequest(icp)), HttpStatus.OK);
     }
 
-    @GetMapping("/v1")
+    @PutMapping
     public ResponseEntity<Individual> getIndividualv1(@RequestParam String icp) {
         return new ResponseEntity<>(getIndividualInbound.handleRequest(icp), HttpStatus.OK);
     }
@@ -41,7 +41,7 @@ public class IndividualController {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IndividualNotFoundException.class)
-    public Error getIndividualHandler(IndividualNotFoundException e) {
-        return new Error(e.getMessage());
+    public ErrorMessage getIndividualHandler(IndividualNotFoundException e) {
+        return new ErrorMessage(e.getMessage());
     }
 }
