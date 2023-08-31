@@ -28,7 +28,7 @@ public class DictionaryController {
     }
 
     @GetMapping(value = "/values", params = {"name", "code"})
-    public ResponseEntity<Dictionary> getDictionary(@RequestParam String name,@RequestParam String code) {
+    public ResponseEntity<Dictionary> getDictionary(@RequestParam String name, @RequestParam(required = false) String code) {
         return new ResponseEntity<>(getDictionaryInboundValue.executeValue(name, code), HttpStatus.OK);
     }
 

@@ -1,0 +1,22 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+    <changeSet id="5" author="Ilia">
+        <createTable tableName="car" remarks="Имена">
+
+            <column name="id" type="varchar(36)" autoIncrement="false" remarks="ID">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="value" type="varchar(255)" remarks="Марка машины">
+                <constraints nullable="false"/>
+            </column>
+            <column name="archived" type="boolean" remarks="Состояние значения">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="car"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

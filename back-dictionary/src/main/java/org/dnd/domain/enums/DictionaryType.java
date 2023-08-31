@@ -10,7 +10,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public enum DictionaryType {
     CITY("city"),
-    DEFAULT_NAME("default_name");
+    DEFAULT_NAME("default_name"),
+
+    CAR("car");
 
     private final String name;
 

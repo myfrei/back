@@ -1,7 +1,7 @@
-package org.dnd.adapter.persistens.dictionary.config;
+package org.dnd.adapter.persistence.dictionary.config;
 
 import one.util.streamex.StreamEx;
-import org.dnd.adapter.persistens.dictionary.DictionaryCrudRepository;
+import org.dnd.adapter.persistence.dictionary.DictionaryCrudRepository;
 import org.dnd.domain.Dictionary;
 import org.dnd.domain.enums.DictionaryType;
 import org.springframework.context.annotation.Bean;

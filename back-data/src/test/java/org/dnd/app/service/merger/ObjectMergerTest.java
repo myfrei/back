@@ -19,6 +19,11 @@ public class ObjectMergerTest extends BackDataTest {
     }
 
     @Test
+    public void delete_individual_from_request() throws IOException {
+        updateFromRequest();
+    }
+
+    @Test
     public void not_update_individual_from_request() throws IOException {
         updateFromRequest();
     }

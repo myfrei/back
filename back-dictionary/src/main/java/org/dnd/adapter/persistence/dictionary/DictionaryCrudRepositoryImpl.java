@@ -1,8 +1,8 @@
-package org.dnd.adapter.persistens.dictionary;
+package org.dnd.adapter.persistence.dictionary;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.dnd.adapter.persistens.dictionary.config.DictionaryFactory;
+import org.dnd.adapter.persistence.dictionary.config.DictionaryFactory;
 import org.dnd.app.api.DictionaryRepository;
 import org.dnd.app.impl.exeption.DictionaryNotFoundException;
 import org.dnd.app.impl.exeption.ErrorMessage;

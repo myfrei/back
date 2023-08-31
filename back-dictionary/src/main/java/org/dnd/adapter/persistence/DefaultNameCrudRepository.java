@@ -1,6 +1,6 @@
-package org.dnd.adapter.persistens;
+package org.dnd.adapter.persistence;
 
-import org.dnd.adapter.persistens.dictionary.DictionaryCrudRepository;
+import org.dnd.adapter.persistence.dictionary.DictionaryCrudRepository;
 import org.dnd.domain.DefaultName;
 import org.dnd.domain.enums.DictionaryType;
 import org.springframework.stereotype.Component;

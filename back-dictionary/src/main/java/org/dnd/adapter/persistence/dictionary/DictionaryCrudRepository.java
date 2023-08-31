@@ -1,4 +1,4 @@
-package org.dnd.adapter.persistens.dictionary;
+package org.dnd.adapter.persistence.dictionary;
 
 import org.dnd.domain.Dictionary;
 import org.dnd.domain.enums.DictionaryType;

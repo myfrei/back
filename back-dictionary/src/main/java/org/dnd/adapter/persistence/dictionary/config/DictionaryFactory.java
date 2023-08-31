@@ -1,6 +1,6 @@
-package org.dnd.adapter.persistens.dictionary.config;
+package org.dnd.adapter.persistence.dictionary.config;
 
-import org.dnd.adapter.persistens.dictionary.DictionaryCrudRepository;
+import org.dnd.adapter.persistence.dictionary.DictionaryCrudRepository;
 import org.dnd.app.impl.exeption.DictionaryNotFoundException;
 import org.dnd.app.impl.exeption.ErrorMessage;
 import org.dnd.domain.Dictionary;

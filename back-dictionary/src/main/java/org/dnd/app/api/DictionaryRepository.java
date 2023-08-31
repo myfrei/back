@@ -1,6 +1,6 @@
 package org.dnd.app.api;
 
-import org.dnd.adapter.persistens.dictionary.DictionaryCrudRepository;
+import org.dnd.adapter.persistence.dictionary.DictionaryCrudRepository;
 import org.dnd.domain.Dictionary;
 
 public interface DictionaryRepository {

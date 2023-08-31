@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+    <changeSet id="6" author="Ilia">
+        <loadData tableName="car" file="csv/Car.csv" relativeToChangelogFile="true" separator=";">
+            <column name="id" type="STRING"/>
+            <column name="value" type="STRING"/>
+            <column name="arcgived" type="boolean"/>
+        </loadData>
+        <rollback>
+            <delete tableName="car"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
